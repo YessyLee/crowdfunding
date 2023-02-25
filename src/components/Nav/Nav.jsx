@@ -7,11 +7,11 @@ function Nav(props) {
         window.localStorage.removeItem("token")
         setLoggedIn(false)
     }
-    
+
     return (
         <nav>
             <div id="logo">
-                <img src="src/images/Communitarian.png" alt="communitarian-logo" />
+                {/* <img src="src/images/Communitarian.png" alt="communitarian-logo" /> */}
             </div>
             <div id="nav-right">
                 {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
