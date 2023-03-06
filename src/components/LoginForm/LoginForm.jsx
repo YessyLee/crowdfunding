@@ -42,7 +42,7 @@ function LoginForm() {
             const { token } = await postData();
             window.localStorage.setItem("token", token);
             setLoggedIn(true);
-            navigate("/");
+            navigate("/home");
         }
     };
     

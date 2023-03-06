@@ -19,15 +19,20 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
-      <h1>FutureProofME: Crowdfunding for your future</h1>
-      <p>FutureProofME is a crowdfunding platform to help you raise money for education and can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, textbooks, and other course materials.</p>
-      <div id="project-list">
-        {projectList.map((project, key) => {
-          return <ProjectCard key={key} projectData={project} />;
-        })}
-      </div>
+    <div className="pt-10">
+    <div className="p-10 mt-20">
+      <h1 className="text-2xl font-bold text-indigo-800">FutureProofME: Crowdfunding for your Future</h1><span>
+      </span>
+      <p className="text-slate-700">FutureProofME is a crowdfunding platform to help you raise money for education and can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, textbooks, and other course materials.</p>
+      <div><h1 className="text-2xl font-bold text-center text-indigo-800">Latest Campaigns</h1></div>
     </div>
+
+    <div id="project-list" className="p-10">
+      {projectList.map((project, key) => {
+        return <ProjectCard key={key} projectData={project} />;
+      })}
+    </div>
+  </div>
   );
 }
 

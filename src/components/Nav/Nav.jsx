@@ -9,17 +9,36 @@ function Nav(props) {
     }
 
     return (
-        <nav>
-            <div id="logo">
-                {/* <img src="src/images/Communitarian.png" alt="communitarian-logo" /> */}
+        <nav className="flex justify-between bg-indigo-100 p-2 backdrop-blur-md w-full
+        fixed top-0 left-0 right 0 z-10">
+        
+            {/* logo container */}
+            <div className="flex items-center">
+                <a className="cursor-pointer">
+                    {/* <h3 class="text-2xl font-medium text-blue-500"> */}
+                    <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo" />
+                    {/* </h3> */}
+                </a>
             </div>
-            <div id="nav-right">
-                {!loggedIn && <Link to="/login" className="btn">Login In</Link>}
-                <div id="nav-controls">
-                    <Link to="/" >Home</Link>
-                </div>
+
+            <div className="items-center font-bold text-indigo-900 text-lg hidden space-x-10 lg:flex">
+                    <Link to="/home" >HOME</Link>
+                    <Link to="/postproject" >POST CAMPAIGN</Link>
+                    <Link to="" >CONTACT US</Link>
             </div>
-            {loggedIn && <button onClick={handleClick}>Sign Out</button>}
+
+            <div className="mr-10 items-center hidden space-x-6 lg:flex">
+                <button class="bg-indigo-500 hover:bg-indigo-800 text-white font-bold py-1 px-3 rounded">
+                <Link to="/registration" >Sign Up</Link> </button>
+
+                <button class="bg-indigo-500 hover:bg-indigo-800 text-white font-bold py-1 px-3 rounded">
+                {!loggedIn && <Link to="/login" className="">Login</Link>}
+                {loggedIn && <button onClick={handleClick}>Sign Out</button>}
+                </button>
+            </div>
+                
+    
+            
         </nav>
     );
 }

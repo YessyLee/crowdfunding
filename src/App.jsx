@@ -4,6 +4,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
+import RegistrationPage from "./pages/RegistrationPage";
+import PostProjectPage from "./pages/PostProjectPage";
 
 // Components
 import Nav from "./components/Nav/Nav";
@@ -12,6 +14,7 @@ import Nav from "./components/Nav/Nav";
 //CSS
 import "./App.css"
 import { useState } from "react";
+import PledgePage from "./pages/PledgePage";
 
 // const HeaderLayout = () => (
   // <div>
@@ -35,9 +38,13 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/home", element: <HomePage /> },
       { path:"/login", element: <LoginPage /> },
       { path: "/project/:id", element: <ProjectPage /> },
+      { path: "/registration", element: <RegistrationPage />},
+      { path: "/pledges", element: <PledgePage/>},
+      { path: "/postproject", element: <PostProjectPage/>},
+      //ADD PATH TO USER//
     ],
   },
 ]);
