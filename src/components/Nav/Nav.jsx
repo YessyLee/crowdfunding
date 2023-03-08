@@ -22,12 +22,13 @@ function Nav(props) {
             <div className="items-center font-bold text-indigo-900 text-lg hidden space-x-10 lg:flex">
                     <Link to="/home" className="hover:text-indigo-400">HOME</Link>
                     <Link to="/postproject" className="hover:text-indigo-400">CREATE CAMPAIGN</Link>
-                    <Link to="" className="hover:text-indigo-400">CONTACT US</Link>
+                    <Link to="/contact" className="hover:text-indigo-400">CONTACT US</Link>
             </div>
 
             <div className="mr-10 items-center hidden space-x-6 lg:flex">
                 <button class="bg-indigo-500 hover:bg-indigo-800 text-white font-bold py-1 px-3 rounded">
-                <Link to="/registration" >Sign Up</Link> </button>
+                {!loggedIn && <Link to="/registration">Sign Up</Link>} 
+                </button>
 
                 <button class="bg-indigo-500 hover:bg-indigo-800 text-white font-bold py-1 px-3 rounded">
                 {!loggedIn && <Link to="/login">Login</Link>}

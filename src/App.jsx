@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import PledgePage from "./pages/PledgePage";
+import ContactPage from "./pages/ContactPage";
 
 
 // Components
@@ -44,9 +45,10 @@ const router = createBrowserRouter([
       { path:"/login", element: <LoginPage /> },
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/registration", element: <RegistrationPage />},
-      { path: "/pledges", element: <PledgePage/>},
-      { path: "/postproject", element: <PostProjectPage/>},
-      //ADD PATH TO USER//
+      { path: "/pledges", element: <PledgePage />},
+      { path: "/postproject", element: <PostProjectPage />},
+      { path: "/contact", element: <ContactPage />},
+           //ADD PATH TO USER ACC WHEN READY//
     ],
   },
 ]);
