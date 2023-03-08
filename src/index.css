@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* I THINK I INSTALLED TAILWIND INCORRECTLY, INITIALLY I DONWLOADED USING HTML INSTRUCTIONS */
+
 /* @layer base { */
     /* h1 { */
       /* @apply text-6xl text-indigo-700; */

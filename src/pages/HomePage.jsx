@@ -18,21 +18,46 @@ function HomePage() {
     });
   }, []);
 
-  return (
-    <div className="pt-10">
-    <div className="p-10 mt-20">
-      <h1 className="text-2xl font-bold text-indigo-800">FutureProofME: Crowdfunding for your Future</h1><span>
-      </span>
-      <p className="text-slate-700">FutureProofME is a crowdfunding platform to help you raise money for education and can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, textbooks, and other course materials.</p>
-      <div><h1 className="text-2xl font-bold text-center text-indigo-800">Latest Campaigns</h1></div>
-    </div>
+  function compare(a, b) {
+    if (a.date_created < b.date_created) {
+      return 1;
+    }
+    if (a.date_created > b.date_created) {
+      return -1;
+    }
+    return 0;
+  }
+  const latestProject = projectList.sort(compare).slice(0, 3);
 
-    <div id="project-list" className="p-10">
-      {projectList.map((project, key) => {
+  return (
+    <div className="bg-gray-100 pt-20">
+
+        <div className="pt-20 pl-20 pr-20 mt-20">
+          <div className="grid grid-cols-2">
+            <div>
+              <img className="ml-5 object-scale-down h-80 animate-bounce inline-block" src="/images/Logo3.png" alt="Futureproofme icon" />
+            </div>
+          
+            <div>
+              <h1 className="text-3xl font-bold text-indigo-900">Welcome to FutureProofME!</h1>
+              <h2 className="text-xl font-bold text-indigo-900 mb-5">Crowdfunding site for your FUTURE 🚀</h2>
+              <p className="text-slate-600">FutureProofME is a crowdfunding platform to help you and peers-alike raise fund for education, and can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, and other course materials.</p>
+            </div>
+          </div>
+        </div>
+
+
+      <div>
+        <h1 className="pt-5=3 pb-3 ml-10 mr-10 bg-indigo-100 text-3xl font-bold text-center text-indigo-900 rounded-md">Latest Campaigns</h1>
+        <div className=" grid grid-cols-3 p-10 gap-10">
+  
+        {latestProject.map((project, key) => {
         return <ProjectCard key={key} projectData={project} />;
-      })}
+        })}
+        </div>
+      </div>
+
     </div>
-  </div>
   );
 }
 

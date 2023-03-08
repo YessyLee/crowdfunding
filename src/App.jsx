@@ -1,4 +1,5 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { useState } from "react";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -6,15 +7,15 @@ import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import PostProjectPage from "./pages/PostProjectPage";
+import PledgePage from "./pages/PledgePage";
+
 
 // Components
 import Nav from "./components/Nav/Nav";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 //CSS
 import "./App.css"
-import { useState } from "react";
-import PledgePage from "./pages/PledgePage";
 
 // const HeaderLayout = () => (
   // <div>
@@ -24,12 +25,13 @@ import PledgePage from "./pages/PledgePage";
 // );
 
 const Layout = () => {
-  const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null)
+  const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null);
+  
   return (
     <>
       <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Outlet context={[loggedIn, setLoggedIn]} />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

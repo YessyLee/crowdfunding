@@ -69,6 +69,7 @@ function PledgeForm(props) {
           <label htmlFor="amount">Amount:</label>
           <input
             type="number"
+            min="1"
             id="amount"
             placeholder="Your donation amount"
             onChange={handleChange}

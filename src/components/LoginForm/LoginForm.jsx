@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
     const [, setLoggedIn] = useOutletContext();
@@ -47,29 +48,57 @@ function LoginForm() {
     };
     
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="username">Username:</label>
-                <input
+        <body className="mt-10 flex min-h-screen">
+        <form className="pl-20 pt-20 ml-20 mt-20 w-3/5" onSubmit={handleSubmit}>
+            <h1 className="text-indigo-900 text-3xl text-center font-bold ml-20 pl-20 pb-3">Login Page</h1>
+            <h2 className="text-indigo-400 text-xl text-center font-bold ml-20 pl-20 pb-5">Login now and create your very own campaign!</h2>
+            <div className="flex items-center mb-6">  
+                <div className="md:w-1/3">
+                    <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    htmlFor="username">Username:</label>
+                </div>
+
+                <div className="md:w-2/3">
+                    <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     type="text"
                     id="username"
                     onChange={handleChange}
                     placeholder="Enter username"
-                />
+                    />
+                </div>
             </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input
+            
+            <div className="flex items-center mb-6">
+                <div className="md:w-1/3">
+                    <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    htmlFor="password">Password:</label>
+                </div>
+
+                <div className="md:w-2/3">
+                    <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                     type="password"
                     id="password"
                     onChange={handleChange}
                     placeholder="Password"
                 />
+                </div>
             </div>
-            <button type="submit">
-                Login
-            </button>
+      
+            
+            <div className="md:flex md:items-center">
+                <div className="md:w-1/3"></div>
+                <div className="md:w-2/3">
+                    <button class="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded" 
+                    type="submit">
+                    Login
+                    </button>  
+                </div>             
+            </div>
+            
+            <h2 className="text-indigo-800 text-md text-center mt-10 ml-20 pl-20">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Create your account here!</Link></h2>
+            
         </form>
+        </body>
     );
 }
 
