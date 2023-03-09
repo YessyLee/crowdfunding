@@ -41,7 +41,7 @@ function HomePage() {
             <div>
               <h1 className="text-3xl font-bold text-indigo-900">Welcome to FutureProofME!</h1>
               <h2 className="text-xl font-bold text-indigo-900 mb-5">Crowdfunding site for your FUTURE 🚀</h2>
-              <p className="text-slate-600">FutureProofME is a crowdfunding platform to help you and peers-alike raise fund for education, and can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, and other course materials.</p>
+              <p className="text-slate-600">FutureProofME is a crowdfunding platform to help you and your peers raise funds for education. FutureProofME can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, and other course materials.</p>
             </div>
           </div>
         </div>

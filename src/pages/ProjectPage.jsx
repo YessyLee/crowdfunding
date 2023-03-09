@@ -28,7 +28,8 @@ function ProjectPage() {
 
 
   return (
-    <div>
+    <body className="flex min-h-screen justify-center items-center">
+      <div>
       <h2>{project.title}</h2>
       <h3>Created at: {new Date(project.date_created).toLocaleDateString()}</h3>
       <h3>Created by: {project.owner}</h3>
@@ -37,7 +38,10 @@ function ProjectPage() {
       <ProgressBar goal={project.goal} total={project.total} />
       <p>{project.description}</p>
       <img src={project.image} />
-    <h2>Donate now:</h2>
+      </div>
+      
+      <div>
+      <h2>Donate now:</h2>
       <PledgeForm project={project} /> 
 
       <h3>Pledges received:</h3>
@@ -52,6 +56,7 @@ function ProjectPage() {
           );
         })}
       </ul>
+      </div>
 
     {/* <PledgeForm project={project} />  */}
       {/* <div> */}
@@ -67,8 +72,8 @@ function ProjectPage() {
                   {/* // ))} */}
           {/* </ul> */}
       {/* </div> */}
-    </div>
+    </body>
   );
-}
+      }
 
 export default ProjectPage;

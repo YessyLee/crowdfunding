@@ -48,10 +48,10 @@ function LoginForm() {
     };
     
     return (
-        <body className="mt-10 flex min-h-screen">
-        <form className="pl-20 pt-20 ml-20 mt-20 w-3/5" onSubmit={handleSubmit}>
-            <h1 className="text-indigo-900 text-3xl text-center font-bold ml-20 pl-20 pb-3">Login Page</h1>
-            <h2 className="text-indigo-400 text-xl text-center font-bold ml-20 pl-20 pb-5">Login now & create your very own campaign!</h2>
+        <body className="flex min-h-screen justify-center items-center">
+        <form onSubmit={handleSubmit}>
+            <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">Login Page</h1>
+            <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login now & create your very own campaign!</h2>
             
             <div className="flex items-center mb-6">  
                 <div className="md:w-1/3">
@@ -96,7 +96,7 @@ function LoginForm() {
                 </div>             
             </div>
             
-            <h2 className="text-indigo-800 text-md text-center mt-10 pl-3">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
+            <h2 className="text-indigo-800 text-md text-center mt-5 pl-20 ml-14">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
             
         </form>
         </body>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* I THINK I INSTALLED TAILWIND INCORRECTLY, INITIALLY I DONWLOADED USING HTML INSTRUCTIONS */
+/* I THINK I INSTALLED TAILWIND INCORRECTLY, INITIALLY I DONWLOADED HTML INSTRUCTIONS, THEN TRIED TO REVERSE AND INSTALLED REACTJS VERSION, BUT THESE ERRORS CAME UP AND NOT SURE HOW TO FIX THESE */
 
 /* @layer base { */
     /* h1 { */
@@ -12,10 +12,10 @@
       /* @apply text-5xl; */
     /* } */
     /* h3 { */
-      /* @apply font-medium text-lg text-slate-500 font-bold text-center mb-3; */
+      /* @apply font-medium text-lg text-indigo-500 font-bold text-center mb-3; */
     /* } */
     /* h4 { */
-      /* @apply font-medium text-lg text-slate-500 font-bold text-center mb-3; */
+      /* @apply font-medium text-lg text-indigo-500 font-bold text-center mb-3; */
     /* } */
     /* p { */
       /* @apply font-medium text-sm text-slate-500 text-center mb-3; */
