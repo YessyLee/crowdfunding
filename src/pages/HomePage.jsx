@@ -27,7 +27,7 @@ function HomePage() {
     }
     return 0;
   }
-  const latestProject = projectList.sort(compare).slice(0, 3);
+  const latestProject = projectList.sort(compare).slice(0, 4);
 
   return (
     <div className="bg-gray-100 pt-20">
@@ -49,7 +49,7 @@ function HomePage() {
 
       <div>
         <h1 className="pt-5=3 pb-3 ml-10 mr-10 bg-indigo-100 text-3xl font-bold text-center text-indigo-900 rounded-md">Latest Campaigns</h1>
-        <div className=" grid grid-cols-3 p-10 gap-10">
+        <div className=" grid grid-cols-4 p-10 gap-5">
   
         {latestProject.map((project, key) => {
         return <ProjectCard key={key} projectData={project} />;

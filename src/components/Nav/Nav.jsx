@@ -13,9 +13,8 @@ function Nav(props) {
         fixed top-0 left-0 right 0 z-10">
         
             <div className="flex items-center">
-                <a className="cursor-pointer">
-                    <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo" />
-                    {/* </h3> */}
+                <a href="" className="cursor-pointer">
+                <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo"></img>
                 </a>
             </div>
 

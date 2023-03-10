@@ -60,50 +60,66 @@ function PledgeForm(props) {
   };
 
   return (
-    <div>
+    <body className="flex">
       <form onSubmit={handleSubmit}>
-        {/* <h3>Make a Donation:</h3> */}
-        <div>
-          {/* <label htmlFor="amount">Amount:</label> */}
-          <h3>Donate Now:</h3>
-          <label htmlFor="amount">Amount:</label>
-          <input
+        <h3 className="font-bold text-indigo-800 text-xl mt-5 mb-5">Make a Donation Now!</h3>
+
+        <div className="flex mb-5">
+          <div className="w-1/3 flex items-start">
+            <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="amount">Amount:</label>
+          </div>
+            
+          <div className=""> 
+            <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-1 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             type="number"
             min="1"
             id="amount"
             placeholder="Your donation amount"
             onChange={handleChange}
           />
+          </div>
         </div>
-        <div>
-          {/* <label htmlFor="comment">Comment:</label> */}
-          <label htmlFor="comment">Comment:</label>
-          <input
+        
+      <div className="flex mb-5">
+        <div className="w-1/3 flex items-start">
+          <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="comment">Comment:</label>
+        </div>
+          
+        <div className="w-2/3 flex items-start"> 
+          <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-5 px-5 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             type="text"
             id="comment"
             placeholder="Your message..."
             maxlength="120"
             onChange={handleChange}
           />
+          </div>
         </div>
-        <div>
-          <label htmlFor="anonymous">
-            Anonymous:
-            <input
-              className="checkbox"
+
+        <div className="flex mb-5">
+          <div className="w-1/3 flex items-start">
+            <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="anonymous">Anonymous:</label>
+          </div>
+
+          <div className="w-2/3 flex items-start">
+            <input className="pl-10 ml-1 mt-2"
               type="checkbox"
               id="anonymous"
               onChange={handleChange}
             />
-          </label>
-        </div>
-        <div>
-          <button className="project-button" type="submit">
-            Pledge
+          </div>
+          </div>
+        
+      <div className="md:flex md:items-center">
+        <div className="md:w-1/3"></div>
+        <div className="md:w-2/3">
+          <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded" type="submit" onClick={handleSubmit}>
+          Donate
           </button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
+  </body>
   );
 }
 

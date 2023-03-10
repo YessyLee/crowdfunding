@@ -51,7 +51,7 @@ function LoginForm() {
         <body className="flex min-h-screen justify-center items-center">
         <form onSubmit={handleSubmit}>
             <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">Login Page</h1>
-            <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login now & create your very own campaign!</h2>
+            <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login to donate & to create your campaign!</h2>
             
             <div className="flex items-center mb-6">  
                 <div className="md:w-1/3">

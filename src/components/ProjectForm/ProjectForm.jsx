@@ -57,8 +57,9 @@ function ProjectForm() {
 
     <body className="flex min-h-screen justify-center items-center">
       <form className="mt-10 pt-20" onSubmit={handleSubmit}>
-       <h1 className="text-indigo-900 text-3xl text-center font-bold pb-8">
-        Create FutureProofME campaign!</h1>
+       <h1 className="text-indigo-900 text-3xl text-center font-bold pb-2">
+        Create a FutureProofME campaign!</h1>
+        <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">To post a campaign you would need to login.</h2>
 
         <div className="flex items-center mb-6">  
           <div className="md:w-1/3">

@@ -15,13 +15,13 @@ const ProgressBar = ({ goal, total }) => {
 
 return (
   <div>
-    <div className="w-full bg-indigo-900 rounded-full h-7 dark:bg-gray-700">
+    <div className="w-full bg-indigo-900 rounded-full h-6 dark:bg-gray-700">
           {/* <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 45%">{ progressStyle }</div> */}
       <div>
         {total < goal ? (
-          <div style={progressStyle} className="bg-indigo-300 text-3xl font-medium text-blue-300 text-center p-3.5 leading-none rounded-full"></div>
+          <div style={progressStyle} className="bg-indigo-300 p-3 leading-none rounded-full"></div>
         ) : (
-      <div style={completeGoalStyle} className="bg-indigo-400 text-md font-medium text-blue-600 text-center p-3.5 leading-none rounded-full"></div>
+        <div style={completeGoalStyle} className="bg-indigo-400 p-3 leading-none rounded-full"></div>
       )}
     </div>
     {total < goal ? (
