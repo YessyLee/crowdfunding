@@ -1,8 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 function ContactForm() {
-
-    // formspree code
+    //Using formspree code
     const [state, handleSubmit] = useForm("123xyz");
 
     if (state.succeeded) {
@@ -11,12 +10,9 @@ function ContactForm() {
 
     return (
         <body className="flex min-h-screen justify-center items-center">
-        <form onSubmit={handleSubmit}>
-        <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">
-        Contact Us</h1>
-        <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">
-        Got questions? Complete the form below and we'll get back to you!</h2>
-            
+            <form onSubmit={handleSubmit}>
+                <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">Contact Us</h1>
+                <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Got questions? Complete the form below and we'll get back to you!</h2>         
                 
             <div className="flex items-center mb-6">
                 <div className="md:w-1/3">
@@ -70,8 +66,7 @@ function ContactForm() {
                     field="message"
                     errors={state.errors}
                 />  
-            </div>
-            
+            </div>            
 
             <div className="md:flex md:items-center">
                 <div className="md:w-1/3"></div>
@@ -80,12 +75,10 @@ function ContactForm() {
                     Submit
                     </button>
                 </div>
-            </div>
-            
-
+            </div>           
         </form>
-        </body>
+    </body>
     );
 }
 
-    export default ContactForm;
+export default ContactForm;

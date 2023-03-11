@@ -52,9 +52,9 @@ function RegistrationForm() {
   return (
     <body className="flex min-h-screen justify-center items-center">
       <form className="pt-20 mt-10" onSubmit={handleSubmit}>
-      <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">
+        <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">
         Sign Up</h1>
-      <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">
+        <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">
         Register to donate & to create your very own campaign!</h2>
 
       <div className="flex items-center mb-6">  
@@ -76,6 +76,7 @@ function RegistrationForm() {
       <div className="md:w-1/3">
         <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="password">Password:</label>
       </div>
+      
       <div className="md:w-2/3">
         <input className ="bg-indigo-100 appearance-none border-2 
         border-gray-200 rounded w-full py-2 px-4 text-gray-700 
@@ -92,6 +93,7 @@ function RegistrationForm() {
       <div className="md:w-1/3">
         <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="avatar">Avatar:</label>
       </div>
+
       <div className="md:w-2/3">
         <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         type="url"
@@ -124,13 +126,13 @@ function RegistrationForm() {
         type="submit">
         Login
         </button>  
-    </div>             
-  </div>
+      </div>             
+    </div>
             
     <h2 className="text-indigo-800 text-md text-center mt-5 ml-20 pl-5">
     Already have an account?<Link to="/login" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Login here!</Link></h2>    
             
-  </form>
+    </form>
   </body>
   );
 }

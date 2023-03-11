@@ -1,11 +1,10 @@
 import React from "react";
-import "./ProgressBar.css";
 
-//total is not sum up on the back end model, need to fix DRF first
 const ProgressBar = ({ goal, total }) => {
   const progressPercentage = Math.round((total / goal) * 100) + "%";
   const remainder = Math.round(goal - total, 2);
   console.log(progressPercentage);
+
   const progressStyle = {
     width: progressPercentage,
   };
@@ -21,9 +20,10 @@ return (
         {total < goal ? (
           <div style={progressStyle} className="bg-indigo-300 p-3 leading-none rounded-full"></div>
         ) : (
-        <div style={completeGoalStyle} className="bg-indigo-400 p-3 leading-none rounded-full"></div>
-      )}
-    </div>
+          <div style={completeGoalStyle} className="bg-indigo-400 p-3 leading-none rounded-full"></div>
+        )}
+      </div>
+
     {total < goal ? (
       <p className="pt-1 text-center text-gray-500 font-bold">
         ${total > 0 ? total : "0"} raised of ${goal}</p>

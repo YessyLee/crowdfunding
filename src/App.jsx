@@ -19,13 +19,6 @@ import Footer from "./components/Footer/Footer";
 //CSS
 import "./App.css"
 
-// const HeaderLayout = () => (
-  // <div>
-    {/* <Nav /> */}
-    {/* <Outlet /> */}
-  {/* </div> */}
-// );
-
 const Layout = () => {
   const [loggedIn, setLoggedIn] = useState(window.localStorage.getItem("token") != null);
   
@@ -50,7 +43,7 @@ const router = createBrowserRouter([
       { path: "/postproject", element: <PostProjectPage />},
       { path: "/contact", element: <ContactPage />},
       { path: "/allprojects", element: <AllProjectsPage />},
-           //ADD PATH TO USER ACC WHEN READY//
+        //WIP - Add user profile path when ready//
     ],
   },
 ]);

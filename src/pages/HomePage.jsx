@@ -1,10 +1,10 @@
 import { useState, useEffect} from "react";
 
-// Components
+//Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 function HomePage() {
-  //State, set is function to set project list dummy data
+  //State
   const [projectList, setProjectList] = useState([]);
 
   //Effect only run once after first UI rendered if array is empty []
@@ -27,11 +27,10 @@ function HomePage() {
     }
     return 0;
   }
-  const latestProject = projectList.sort(compare).slice(0, 4);
 
+  const latestProject = projectList.sort(compare).slice(0, 4);
   return (
     <div className="bg-gray-100 pt-20">
-
         <div className="pt-20 pl-20 pr-20 mt-20">
           <div className="grid grid-cols-2">
             <div>
@@ -46,17 +45,14 @@ function HomePage() {
           </div>
         </div>
 
-
       <div>
         <h1 className="pt-3 pb-3 ml-10 mr-10 bg-indigo-100 text-3xl font-bold text-center text-indigo-900 rounded-lg">Latest Campaigns</h1>
         <div className="grid grid-cols-4 p-10 gap-5">
-  
         {latestProject.map((project, key) => {
-        return <ProjectCard key={key} projectData={project} />;
+          return <ProjectCard key={key} projectData={project} />;
         })}
         </div>
       </div>
-
     </div>
   );
 }

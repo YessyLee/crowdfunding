@@ -83,8 +83,7 @@ function LoginForm() {
                     placeholder="Password"
                 />
                 </div>
-            </div>
-      
+            </div>     
             
             <div className="md:flex md:items-center">
                 <div className="md:w-1/3"></div>
@@ -99,7 +98,7 @@ function LoginForm() {
             <h2 className="text-indigo-800 text-md text-center mt-5 pl-20 ml-14">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
             
         </form>
-        </body>
+    </body>
     );
 }
 

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import './Nav.css'
 
 function Nav(props) {
     const { loggedIn, setLoggedIn } = props
@@ -13,9 +12,11 @@ function Nav(props) {
         fixed top-0 left-0 right 0 z-10">
         
             <div className="flex items-center">
-                <a href="" className="cursor-pointer">
-                <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo"></img>
-                </a>
+                <Link to="/home">
+                    <a className="cursor-pointer"> 
+                    <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo"></img>
+                    </a>
+                </Link>
             </div>
 
             <div className="items-center font-bold text-indigo-900 text-lg hidden space-x-10 lg:flex">
@@ -34,10 +35,7 @@ function Nav(props) {
                 {!loggedIn && <Link to="/login">Login</Link>}
                 {loggedIn && <button onClick={handleClick}>Sign Out</button>}
                 </button>
-            </div>
-                
-    
-            
+            </div>                          
         </nav>
     );
 }

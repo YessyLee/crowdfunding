@@ -5,20 +5,18 @@ function PledgeForm(props) {
   const { project } = props;
 
   const [pledges, setPledges] = useState({
-    // from JSON Raw Body in Deployed (default values)
-    // this is what you return at the bottom - your list might look different to mine. If so, don't worry!
     amount: null,
     comment: "",
     anonymous: false,
   });
 
-  // enables redirect
+  //Redirect
   const navigate = useNavigate();
 
-  // accesses project ID so the pledge can be connected to it
+  //Access project id, which connect to pledges
   const { id } = useParams();
 
-  // copies the original data, replaces the old data for each id/value pair to what is input in the form (changes state). this will be submitted to API below
+  //Copy the original data, replaces the old data for each id/value pair to what is input in the form (changes state). This will be submitted to API below
   const handleChange = (event) => {
     const { id, value } = event.target;
     setPledges((prevPledges) => ({
@@ -29,7 +27,7 @@ function PledgeForm(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // get auth token from local storage
+    //Get auth token from local storage, but don't use this method in real life deployment, never store auth token on local storage due to security 
     const authToken = window.localStorage.getItem("token");
 
     if (authToken) {
@@ -54,7 +52,7 @@ function PledgeForm(props) {
         alert(`Error: ${err.message}`);
       }
     } else {
-      //REDIRECT TO LOGIN PAGE
+      //Rredirect to login page, need to login before submit a pledge
       navigate(`/login`);
     }
   };
@@ -76,23 +74,23 @@ function PledgeForm(props) {
             id="amount"
             placeholder="Your donation amount"
             onChange={handleChange}
-          />
+            />
           </div>
         </div>
         
-      <div className="flex mb-5">
-        <div className="w-1/3 flex items-start">
-          <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="comment">Comment:</label>
-        </div>
+        <div className="flex mb-5">
+          <div className="w-1/3 flex items-start">
+            <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="comment">Comment:</label>
+          </div>
           
-        <div className="w-2/3 flex items-start"> 
-          <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-5 px-5 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          <div className="w-2/3 flex items-start"> 
+            <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-5 px-5 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
             type="text"
             id="comment"
             placeholder="Your message..."
             maxlength="120"
             onChange={handleChange}
-          />
+            />
           </div>
         </div>
 
@@ -103,11 +101,11 @@ function PledgeForm(props) {
 
           <div className="w-2/3 flex items-start">
             <input className="pl-10 ml-1 mt-2"
-              type="checkbox"
-              id="anonymous"
-              onChange={handleChange}
+            type="checkbox"
+            id="anonymous"
+            onChange={handleChange}
             />
-          </div>
+            </div>
           </div>
         
       <div className="md:flex md:items-center">
