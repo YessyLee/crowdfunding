@@ -7,12 +7,12 @@ import {useParams} from "react-router-dom";
 // Components
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 import ProgressBar from "../components/ProgressBar/ProgressBar";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
-// import ProjectForm
+
 
 function ProjectPage() {
   //State
   const [project, setProjectData] = useState({ pledges: [] });
+  const [owner, setOwner] = useState([]);
 
   //Hook
   const { id } = useParams();
@@ -24,9 +24,18 @@ function ProjectPage() {
     })
     .then((data) => {
       setProjectData(data);
+
+    //convert userid to username
+    const userId = data.owner;
+      return fetch(`${import.meta.env.VITE_API_URL}users/${userId}`);
+    })
+    .then((results) => {
+      return results.json();
+    })
+    .then((data) => {
+      return setOwner(data);
     });
   }, []);
-
 
   return (
 
@@ -36,19 +45,19 @@ function ProjectPage() {
         <div className="grid grid-cols-2 gap-10">
           
           <div>
-            <img className="rounded-md shadow-md w-full h-90 object-cover" src={project.image} />
+            <img className="rounded-md shadow-md w-full h-96 object-cover" src={project.image} />
           </div>
           
           <div className="bg-indigo-50 p-4 rounded-md shadow-md">
-            <h2 className="font-bold text-indigo-800 text-3xl mb-3">{project.title}</h2>
+            <h2 className="font-bold text-indigo-800 text-3xl mb-5">{project.title}</h2>
             
             <p className="text-slate-500 text-lg">
             <h3 className="font-bold text-indigo-500 text-xl mb-1">
               Campaign overview:</h3>
-              <h3 className="text-slate-500 text-sm font-bold mb-2">Published by {project.owner} on {new Date(project.date_created).toLocaleDateString()}</h3>
+              <h3 className="text-slate-500 text-sm font-bold mb-3">Published by {owner.username} on {new Date(project.date_created).toLocaleDateString()}</h3>
               {project.description}</p>
 
-              <p className="font-bold text-indigo-800 text-center text-lg mb-1 mt-5">Campaign Goal</p> 
+              <p className="font-bold text-indigo-800 text-center text-lg mb-1 mt-10">Campaign Goal</p> 
               <ProgressBar goal={project.goal} total={project.total} />
           </div>
 
@@ -59,7 +68,7 @@ function ProjectPage() {
             <PledgeForm project={project} /> 
           </div>
 
-          <div className="mb-10 mt-5">
+          <div className="mb-10 mt-3">
             <h3 className="font-bold text-indigo-500 text-2xl mb-3">Thank you for your donations!</h3>
             <ul>
              {project.pledges.map((pledgeData, key) => {
