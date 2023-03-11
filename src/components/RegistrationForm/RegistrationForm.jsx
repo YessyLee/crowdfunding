@@ -124,7 +124,7 @@ function RegistrationForm() {
       <div className="md:w-2/3">
         <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded" 
         type="submit">
-        Login
+        Sign up
         </button>  
       </div>             
     </div>
