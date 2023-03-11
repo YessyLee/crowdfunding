@@ -33,10 +33,10 @@ function ProjectPage() {
     <body className="flex min-h-screen justify-center items-center">
       
       <div className="pt-24 pl-20 pr-20 mt-24">
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-10">
           
           <div>
-            <img className="rounded-md shadow-md mb-2" src={project.image} />
+            <img className="rounded-md shadow-md w-full h-90 object-cover" src={project.image} />
           </div>
           
           <div className="bg-indigo-50 p-4 rounded-md shadow-md">

@@ -9,6 +9,7 @@ import RegistrationPage from "./pages/RegistrationPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import PledgePage from "./pages/PledgePage";
 import ContactPage from "./pages/ContactPage";
+import AllProjectsPage from "./pages/AllProjectsPage";
 
 
 // Components
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
       { path: "/pledges", element: <PledgePage />},
       { path: "/postproject", element: <PostProjectPage />},
       { path: "/contact", element: <ContactPage />},
+      { path: "/allprojects", element: <AllProjectsPage />},
            //ADD PATH TO USER ACC WHEN READY//
     ],
   },

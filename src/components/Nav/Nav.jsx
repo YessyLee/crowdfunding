@@ -20,6 +20,7 @@ function Nav(props) {
 
             <div className="items-center font-bold text-indigo-900 text-lg hidden space-x-10 lg:flex">
                     <Link to="/home" className="hover:text-indigo-400">HOME</Link>
+                    <Link to="/allprojects" className="hover:text-indigo-400">CAMPAIGNS</Link>    
                     <Link to="/postproject" className="hover:text-indigo-400">CREATE CAMPAIGN</Link>
                     <Link to="/contact" className="hover:text-indigo-400">CONTACT US</Link>
             </div>
