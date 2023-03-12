@@ -84,10 +84,28 @@ function RegistrationForm() {
         type="password"
         id="password"
         onChange={handleChange}
-        placeholder="Password"
+        placeholder="Enter a password"
         />
       </div>
     </div>
+
+    <div className="flex items-center mb-6">
+  <div className="md:w-1/3">
+    <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" 
+htmlFor="email">Email:</label>
+  </div>
+  
+  <div className="md:w-2/3">
+    <input className ="bg-indigo-100 appearance-none border-2 
+    border-gray-200 rounded w-full py-2 px-4 text-gray-700 
+    leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+    type="text"
+    id="email"
+    onChange={handleChange}
+    placeholder="Enter your email"
+    />
+  </div>
+</div>
 
     <div className="flex items-center mb-6">
       <div className="md:w-1/3">
