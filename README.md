@@ -19,6 +19,12 @@ Username | Password:
 - SteveO | password
 - EllenL | password
 
+## Work in Progress
+
+There are a few things that I still need to fix as follow - here as a reminder to myself as well:
+- Create user profile page & edit project funtionality
+- Add responsiveness using Tailwind especially for mobile size (aka media query)
+
 Any questions in regard to this repo, please contact me on:
 - Email: yessy.rayner@gmail.com
 - LinkedIn: https://www.linkedin.com/in/yessy-rayner-perth/
