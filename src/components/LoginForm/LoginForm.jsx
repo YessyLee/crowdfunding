@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../FormStyles.css";
 
 function LoginForm() {
     const [, setLoggedIn] = useOutletContext();
@@ -48,58 +49,102 @@ function LoginForm() {
     };
     
     return (
-        <body className="flex min-h-screen justify-center items-center">
+        // <body className="flex min-h-screen justify-center items-center">
+        <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
-            <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">Login Page</h1>
-            <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login to donate & to create your campaign!</h2>
+            <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3 pt-10">Login Page</h1>
+            <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login to donate and to create your very own campaign!</h2>
             
-            <div className="flex items-center mb-6">  
-                <div className="md:w-1/3">
-                    <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                    htmlFor="username">Username:</label>
-                </div>
-
-                <div className="md:w-2/3">
-                    <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            <div className="form-item">
+                <input
                     type="text"
                     id="username"
+                    name="username"
+                    placeholder="enter your username"
                     onChange={handleChange}
-                    placeholder="Enter username"
-                    />
-                </div>
-            </div>
-            
-            <div className="flex items-center mb-6">
-                <div className="md:w-1/3">
-                    <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                    htmlFor="password">Password:</label>
-                </div>
-
-                <div className="md:w-2/3">
-                    <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                    type="password"
-                    id="password"
-                    onChange={handleChange}
-                    placeholder="Password"
+                    required="required"
                 />
-                </div>
-            </div>     
-            
-            <div className="md:flex md:items-center">
-                <div className="md:w-1/3"></div>
-                <div className="md:w-2/3">
-                    <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded" 
-                    type="submit">
-                    Login
-                    </button>  
+                <label htmlFor="username">
+                    <span>username</span>
+                </label>
+            </div>
+
+            <div className="form-item">
+                <input
+                    type="text"
+                    id="password"
+                    name="password"
+                    placeholder="enter your password"
+                    onChange={handleChange}
+                    required="required"
+                />
+                <label htmlFor="password">
+                    <span>password</span>
+                </label>
+            </div>
+
+            <div className="md:flex md:items-center">   
+                <div>
+                <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold px-20 py-3 marker:rounded" type="submit">
+                login
+                </button>  
                 </div>             
             </div>
+
             
-            <h2 className="text-indigo-800 text-md text-center mt-5 pl-20 ml-14">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
+            <h2 className="text-indigo-800 text-md text-center">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
             
         </form>
-    </body>
+        </div>
+    // </body>
     );
 }
 
 export default LoginForm;
+
+
+{/* <form onSubmit={handleSubmit}> */}
+    {/* <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">Login Page</h1> */}
+    {/* <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">Login to donate & to create your campaign!</h2> */}
+{/*      */}
+    {/* <div className="flex items-center mb-6">   */}
+        {/* <div className="md:w-1/3"> */}
+            {/* <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" */}
+            // htmlFor="username">Username:</label>
+        {/* </div> */}
+        {/* <div className="md:w-2/3"> */}
+            {/* <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white  */}
+// focus:border-purple-500"
+            // type="text"
+            // id="username"
+            // onChange={handleChange}
+            // placeholder="Enter username"
+            // />
+        {/* </div> */}
+    {/* </div> */}
+{/*      */}
+    {/* <div className="flex items-center mb-6"> */}
+        {/* <div className="md:w-1/3"> */}
+            {/* <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" */}
+            // htmlFor="password">Password:</label>
+        {/* </div> */}
+        {/* <div className="md:w-2/3"> */}
+            {/* <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white  */}
+// focus:border-purple-500"
+            // type="password"
+            // id="password"
+            // onChange={handleChange}
+            // placeholder="Password"
+        // />
+        {/* </div> */}
+    {/* </div>      */}
+{/*      */}
+    {/* <div className="md:flex md:items-center"> */}
+        {/* <div className="md:w-1/3"></div> */}
+        {/* <div className="md:w-2/3"> */}
+            {/* <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded"  */}
+            // type="submit">
+            {/* Login */}
+            {/* </button>   */}
+        {/* </div>              */}
+    {/* </div> */}

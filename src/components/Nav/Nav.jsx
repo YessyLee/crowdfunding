@@ -14,7 +14,7 @@ function Nav(props) {
             <div className="flex items-center">
                 <Link to="/home">
                     <a className="cursor-pointer"> 
-                    <img className="ml-5 object-contain h-30 w-60" src="/images/Logo3.png" alt="Futureproofme logo"></img>
+                    <img className="ml-5 object-contain h-30 w-60" src="/images/Logo4.png" alt="Futureproofme logo"></img>
                     </a>
                 </Link>
             </div>
