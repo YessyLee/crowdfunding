@@ -10,7 +10,7 @@ module.exports = {
   plugins: [],
 
   screens: {
-    "sm": "480px",
+    "sm": "450px",
     "md": "768px",
     "lg": "1024px"
   }

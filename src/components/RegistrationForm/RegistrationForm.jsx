@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../FormStyles.css";
 
 function RegistrationForm() {
   const authToken = window.localStorage.getItem("token");
