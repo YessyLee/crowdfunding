@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
+import "../FormStyles.css";
+
 
 function ProjectForm() {
   const authToken = window.localStorage.getItem("token")
@@ -54,10 +56,10 @@ function ProjectForm() {
   };
 
   return (
-
     <body className="flex min-h-screen justify-center items-center">
-      <form className="mt-10 pt-20" onSubmit={handleSubmit}>
-       <h1 className="text-indigo-900 text-3xl text-center font-bold pb-2">
+      <div className="form-wrapper">
+      <form onSubmit={handleSubmit}>
+        <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3 pt-10">
         Create a FutureProofME campaign!</h1>
         <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">To post a campaign you would need to login.</h2>
 
@@ -167,6 +169,7 @@ function ProjectForm() {
           </div>
         </div>
       </form>
+      </div>
     </body>    
   );
 }

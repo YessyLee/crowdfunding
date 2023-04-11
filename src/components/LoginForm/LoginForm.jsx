@@ -49,7 +49,7 @@ function LoginForm() {
     };
     
     return (
-        // <body className="flex min-h-screen justify-center items-center">
+        <body className="flex min-h-screen justify-center items-center">
         <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
             <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3 pt-10">Login Page</h1>
@@ -60,7 +60,6 @@ function LoginForm() {
                     type="text"
                     id="username"
                     name="username"
-                    placeholder="enter your username"
                     onChange={handleChange}
                     required="required"
                 />
@@ -74,7 +73,6 @@ function LoginForm() {
                     type="text"
                     id="password"
                     name="password"
-                    placeholder="enter your password"
                     onChange={handleChange}
                     required="required"
                 />
@@ -85,18 +83,18 @@ function LoginForm() {
 
             <div className="md:flex md:items-center">   
                 <div>
-                <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold px-20 py-3 marker:rounded" type="submit">
+                <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold px-10 rounded-full" type="submit">
                 login
                 </button>  
                 </div>             
             </div>
 
             
-            <h2 className="text-indigo-800 text-md text-center">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Sign up here!</Link></h2>
+            <h2 className="text-indigo-800 text-md text-center mb-10">Don't have an account?<Link to="/registration" className="text-indigo-800 text-lg text-center font-bold pl-2">Sign up here!</Link></h2>
             
         </form>
         </div>
-    // </body>
+    </body>
     );
 }
 

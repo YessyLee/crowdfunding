@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-import ProgressBar from "../components/ProgressBar/ProgressBar";
 
 function AllProjectsPage() {
   // State

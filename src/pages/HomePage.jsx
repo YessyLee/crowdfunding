@@ -2,6 +2,7 @@ import { useState, useEffect} from "react";
 
 //Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
+// import { ArrowSmRightIcon } from '@heroicons/react/24/outline';
 
 function HomePage() {
   //State
@@ -31,26 +32,33 @@ function HomePage() {
   const latestProject = projectList.sort(compare).slice(0, 3);
   return (
     <div className='w-full mt-24'>
-      <div className='w-full h-[700px] bg-gray-900/90 absolute'>
+      <div className='w-full h-[700px] bg-gray-900/80 absolute'>
         <img className='w-full h-full object-cover mix-blend-overlay' src="/images/hero-image.jpg" alt="/" />
      </div>
     
      <div className='max-w-[1240px] mx-auto text-white relative'>
-      <div className='px-4 py-12'>
+      <div className='px-4 py-2 md:py-6 lg:py-12'>
         
         <h3 className='text-5xl font-bold py-6 pt-48 text-center'>Welcome to FutureProofME!</h3>
         <h2 className='text-lg text-slate-100 text-center font-bold sm:text-2xl'>Crowdfunding site for your future 🚀</h2>
-        <p className='py-4 text-sm m-10 mb-5 text-slate-100 text-center sm:text-xl'>FutureProofME is a crowdfunding platform to help you and your peers raise funds for education. FutureProofME can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, and other course materials.</p>
+        <p className='py-3 ml-10 mr-10 text-sm text-slate-100 text-center sm:text-xl'>FutureProofME is a crowdfunding platform to help you and your peers raise funds for education. FutureProofME can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, course materials and more. </p>
+        <p className='ml-10 mr-10 text-slate-100 text-center'><button type="button" className=" py-4 text-sm font-bold p-8 m-8 
+        rounded-lg text-slate-100 text-center bg-gradient-to-r
+        from-green-400 to-blue-500 hover:from-indigo-500 hover:to-yellow-500 sm:text-lg ">
+        Get started today ➔</button> </p>
       </div>
-
     
-      <div className="bg-gradient-to-r from-indigo-300 from-10% via-sky-200 via-30% to-indigo-200 to-90% rounded-lg m-5">
-      <h1 className="text-center text-3xl font-bold pt-5 text-indigo-900">Latest campaigns</h1>
+      <div className="bg-gradient-to-r from-indigo-300 from-10% via-sky-200 via-30% to-indigo-200 to-90% rounded-lg">
+      <h1 className="text-center text-3xl font-bold pt-6 text-indigo-900">Latest campaigns</h1>
       
-        <div className="grid grid-cols-3 p-10 gap-7 sm: flex-col">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 p-10 gap-7 flex-col">
         {latestProject.map((project, key) => {
           return <ProjectCard key={key} projectData={project} />;
         })}
+        <div></div>
+        <div></div>
+        <div><p className= 'py-2 text-md font-bold text-indigo-900 text-right sm:text-xl'>See more campaigns ➔</p>
+        </div>
         </div>
       </div>
     </div>

@@ -52,106 +52,92 @@ function RegistrationForm() {
 
   return (
     <body className="flex min-h-screen justify-center items-center">
-      <form className="pt-20 mt-10" onSubmit={handleSubmit}>
-        <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3">
-        Sign Up</h1>
+    <div className="form-wrapper">
+    <form onSubmit={handleSubmit}>
+      <h1 className="text-indigo-900 text-3xl text-center font-bold pb-3 pt-10">
+        Create an Account</h1>
         <h2 className="text-indigo-400 text-xl text-center font-bold pb-5">
         Register to donate & to create your very own campaign!</h2>
-
-      <div className="flex items-center mb-6">  
-        <div className="md:w-1/3">
-          <label className ="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="username">Username:</label>
-        </div>
     
-        <div className="md:w-2/3">
-          <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-          type="text"
-          id="username"
-          onChange={handleChange}
-          placeholder="Enter username"
+      <div className="form-item">
+        <input
+            type="text"
+            id="username"
+            name="username"
+            onChange={handleChange}
+            required="required"
           />
-        </div>
-      </div>       
+        <label htmlFor="username">
+            <span>username</span>
+        </label>
         
-    <div className="flex items-center mb-6">
-      <div className="md:w-1/3">
-        <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="password">Password:</label>
+        </div>
+      <div className="form-item">
+          <input
+              type="text"
+              id="password"
+              name="password"
+              onChange={handleChange}
+              required="required"
+          />
+          <label htmlFor="password">
+              <span>password</span>
+          </label>
       </div>
-      
-      <div className="md:w-2/3">
-        <input className ="bg-indigo-100 appearance-none border-2 
-        border-gray-200 rounded w-full py-2 px-4 text-gray-700 
-        leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-        type="password"
-        id="password"
+
+      <div className="form-item">
+        <input
+        type="text"
+        id="email"
+        name="email"
         onChange={handleChange}
-        placeholder="Enter a password"
-        />
-      </div>
-    </div>
-
-    <div className="flex items-center mb-6">
-  <div className="md:w-1/3">
-    <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" 
-htmlFor="email">Email:</label>
-  </div>
-  
-  <div className="md:w-2/3">
-    <input className ="bg-indigo-100 appearance-none border-2 
-    border-gray-200 rounded w-full py-2 px-4 text-gray-700 
-    leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-    type="text"
-    id="email"
-    onChange={handleChange}
-    placeholder="Enter your email"
-    />
-  </div>
-</div>
-
-    <div className="flex items-center mb-6">
-      <div className="md:w-1/3">
-        <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="avatar">Avatar:</label>
+        required="required"
+      />
+      <label htmlFor="email">
+        <span>email</span>
+      </label>
       </div>
 
-      <div className="md:w-2/3">
-        <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      <div className="form-item">
+      <input
         type="url"
         id="avatar"
-        placeholder="Enter your image url"
+        name="avatar"
         onChange={handleChange}
-        />
-      </div>
-    </div>
-
-    <div className="flex items-center mb-6">
-      <div className="md:w-1/3">
-        <label className="block text-indigo-900 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="bio">Bio:</label>
+        required="required"
+       />
+      <label htmlFor="avatar">
+        <span>avatar url</span>
+      </label>
       </div>
 
-      <div className="md:w-2/3">
-        <input className ="bg-indigo-100 appearance-none border-2 border-gray-200 rounded w-full py-6 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-        type="text"
+      <div className="form-item">
+      <input
+        type="message"
+        maxlength="200"
         id="bio"
-        placeholder="Tell us about yourself"
+        name="bio"
         onChange={handleChange}
-        />
-      </div>
-    </div>
-
+        required="required"
+     />
+     <label htmlFor="bio">
+        <span>short bio</span>
+      </label>
+     </div>
+  
     <div className="md:flex md:items-center">
-      <div className="md:w-1/3"></div>
-      <div className="md:w-2/3">
-        <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-10 rounded" 
-        type="submit">
-        Sign up
+      <div>
+        <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold px-10 rounded-full" type="submit">
+        sign up
         </button>  
       </div>             
     </div>
             
-    <h2 className="text-indigo-800 text-md text-center mt-5 ml-20 pl-5">
-    Already have an account?<Link to="/login" className="text-indigo-800 text-lg text-center font-bold pl-2 pb-5">Login here!</Link></h2>    
+    <h2 className="text-indigo-800 text-md text-center mb-10">
+    Already have an account?<Link to="/login" className="text-indigo-800 text-lg text-center font-bold pl-2">Login here!</Link></h2>    
             
     </form>
+    </div>
   </body>
   );
 }
