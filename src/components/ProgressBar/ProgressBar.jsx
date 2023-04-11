@@ -31,7 +31,7 @@ return (
       <p className="pt-1 text-center text-gray-500 font-bold">
         ${total > 0 ? total : "0"} raised of ${goal}</p>
     ) : (
-      <p>
+      <p className="pt-1 text-center text-orange-500 font-bold">
         Goal reached 🚀| Total of ${total} raised!
       </p>
     )}

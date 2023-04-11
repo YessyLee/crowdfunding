@@ -10,7 +10,7 @@
 // 
 // export default Footer;
 // 
-
+import { Link } from "react-router-dom";
 import React from 'react'
 
 import {
@@ -27,11 +27,11 @@ py-8'>
             <div>
                 <h6 className='font-bold uppercase pt-2'>SITE MAP</h6>
                 <ul>
-                    <li className='py-1'>Home</li>
-                    <li className='py-1'>All campaigns</li>
-                    <li className='py-1'>Sign up</li>
-                    <li className='py-1'>Login</li>
-                    <li className='py-1'>Contact us</li>
+                    <li className='py-1'><Link to="/home">Home</Link></li>
+                    <li className='py-1'><Link to="/allprojects">All campaigns</Link></li>
+                    <li className='py-1'><Link to="/registration">Sign up</Link></li>
+                    <li className='py-1'><Link to="/login">Login</Link></li>
+                    <li className='py-1'><Link to="/contact">Contact us</Link></li>
                 </ul>
             </div>
             <div></div>
@@ -41,7 +41,7 @@ py-8'>
                 <p className='font-bold uppercase'>Subscribe to our newsletter</p>
                 <p className='py-5'>The latest news, articles, and resources, sent to your inbox weekly.</p>
                 <form className='flex flex-col sm:flex-row bg-slate-900'>
-                    <input className='w-full p-2 mr-4 rounded-md mb-4 text-sm' type="email" placeholder='Enter your email..'/>
+                    <input className='w-full p-2 mr-4 rounded-md mb-4 text-sm text-gray-600' type="email" placeholder='Enter your email..'/>
                     <button className='text-gray-300 py-2 mb-5  hover:bg-indigo-400'>subscribe</button>
                 </form>
             </div>
@@ -50,9 +50,10 @@ py-8'>
         <div className='flex flex-col max-w-[1240px] px-2 py-2 mx-auto justify-between sm:flex-row text-center text-gray-400'>
         <p className='py-4'>2023 Yessy Lee | She Codes Plus Australia. All rights reserved</p>
         <div className='flex justify-between sm:w-[200px] pt-2 text-2xl'>
-            <FaLinkedin />
+          
+            <a href="https://www.linkedin.com/in/yessy-rayner-perth/"> <FaLinkedin /></a>
+            <a href="https://github.com/YessyLee"><FaGithub /></a>
             <FaInstagram />
-            <FaGithub />
         </div>
         </div>
     </div>

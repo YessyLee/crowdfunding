@@ -56,7 +56,7 @@ function ContactForm() {
             <div className="md:flex md:items-center mb-10">
                 <div>
                     <button className="shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-bold px-10 rounded-full" type="submit" disabled={state.submitting}>
-                    Submit
+                    submit
                     </button>
                 </div>
             </div>           

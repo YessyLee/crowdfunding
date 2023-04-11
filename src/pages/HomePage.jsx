@@ -1,12 +1,15 @@
 import { useState, useEffect} from "react";
+import { Link, useParams } from "react-router-dom";
 
 //Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
+import PledgeForm from "../components/PledgeForm/PledgeForm";
 // import { ArrowSmRightIcon } from '@heroicons/react/24/outline';
 
 function HomePage() {
   //State
   const [projectList, setProjectList] = useState([]);
+  const [project, setProjectData] = useState({ pledges: [] });
 
   //Effect only run once after first UI rendered if array is empty []
   useEffect(() => {
@@ -30,6 +33,7 @@ function HomePage() {
   }
 
   const latestProject = projectList.sort(compare).slice(0, 3);
+  const latestPledges = projectList.sort(compare).slice(0, 4);
   return (
     <div className='w-full mt-24'>
       <div className='w-full h-[700px] bg-gray-900/80 absolute'>
@@ -42,14 +46,14 @@ function HomePage() {
         <h3 className='text-5xl font-bold py-6 pt-48 text-center'>Welcome to FutureProofME!</h3>
         <h2 className='text-lg text-slate-100 text-center font-bold sm:text-2xl'>Crowdfunding site for your future 🚀</h2>
         <p className='py-3 ml-10 mr-10 text-sm text-slate-100 text-center sm:text-xl'>FutureProofME is a crowdfunding platform to help you and your peers raise funds for education. FutureProofME can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, course materials and more. </p>
-        <p className='ml-10 mr-10 text-slate-100 text-center'><button type="button" className=" py-4 text-sm font-bold p-8 m-8 
+        <p className='ml-10 mr-10 text-white-100 text-center'><button type="button" className=" py-4 text-sm font-bold p-8 m-8 
         rounded-lg text-slate-100 text-center bg-gradient-to-r
-        from-green-400 to-blue-500 hover:from-indigo-500 hover:to-yellow-500 sm:text-lg ">
-        Get started today ➔</button> </p>
+        from-green-400 to-blue-500 hover:from-indigo-500 hover:to-yellow-500 sm:text-lg "><Link to="/registration">
+        Get started today ➔</Link></button></p>
       </div>
     
-      <div className="bg-gradient-to-r from-indigo-300 from-10% via-sky-200 via-30% to-indigo-200 to-90% rounded-lg">
-      <h1 className="text-center text-3xl font-bold pt-6 text-indigo-900">Latest campaigns</h1>
+      <div className="bg-gradient-to-r from-indigo-300 from-10% via-sky-200 via-30% to-indigo-200 to-90% rounded-lg shadow-2xl">
+        <h1 className="text-center text-3xl font-bold pt-6 text-indigo-900">Latest campaigns</h1>
       
         <div className="grid lg:grid-cols-3 md:grid-cols-2 p-10 gap-7 flex-col">
         {latestProject.map((project, key) => {
@@ -57,12 +61,19 @@ function HomePage() {
         })}
         <div></div>
         <div></div>
-        <div><p className= 'py-2 text-md font-bold text-indigo-900 text-right sm:text-xl'>See more campaigns ➔</p>
-        </div>
+        <div><p className= 'py-2 text-md font-bold text-indigo-900 text-right sm:text-xl'>See more campaigns <Link to="/allprojects"> ➔</Link></p></div>
         </div>
       </div>
+
+    <div className="mt-10 shadow-2xl">
+      <h1 className="text-center text-2xl font-bold pt-6 pb-20 text-indigo-500">Thank you for your donations!</h1>
+ 
+      </div>
+
+
     </div>
     </div>
+    
   
     
   );
