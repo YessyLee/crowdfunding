@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function Nav(props) {
     const { loggedIn, setLoggedIn } = props
+   
     const handleClick = () => {
         window.localStorage.removeItem("token")
         setLoggedIn(false)
@@ -35,7 +36,9 @@ function Nav(props) {
                 {!loggedIn && <Link to="/login">Login</Link>}
                 {loggedIn && <button onClick={handleClick}>Sign Out</button>}
                 </button>
-            </div>                          
+            </div> 
+
+
         </nav>
     );
 }

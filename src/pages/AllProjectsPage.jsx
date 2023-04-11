@@ -42,7 +42,7 @@ function AllProjectsPage() {
           <h2 className="text-4xl text-center font-bold pt-10 mt-10">Support your fellow FutureProofME Campaigners</h2>
           <p className="text-slate-100 p-5 ml-10 mr-10 text-lg text-center">FutureProofME is a crowdfunding platform to help you and your peers raise funds for education. FutureProofME can help you overcome financial barriers that may otherwise prevent you from pursuing your desired career. By using FutureProofME, you can create campaigns to raise funds for your educational expenses, including tuition fees, exam certification, textbooks, and other course materials.</p>
         
-          <p className="font-bold text-center text-xl text-slate-100 pb-10"><Link className="text-yellow-400" to="/registration">SIGN UP NOW</Link> to create your campaign or to donate. Now it's time to future proof yourself and your peers! 🚀</p>
+          <p className="font-bold text-center text-xl text-slate-100 pb-5"><Link className="text-yellow-400" to="/registration">SIGN UP NOW</Link> to create your campaign or to donate. Now it's time to future proof yourself and your peers! 🚀</p>
           </div>
         </div>
 
