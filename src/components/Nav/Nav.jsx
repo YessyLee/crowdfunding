@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 
 function Nav(props) {
     const { loggedIn, setLoggedIn } = props
+   
     const handleClick = () => {
         window.localStorage.removeItem("token")
         setLoggedIn(false)
     }
 
     return (
-        <nav className="flex justify-between bg-indigo-100 p-2 backdrop-blur-md w-full
+        <nav className="flex justify-between bg-blue-100 p-2 backdrop-blur-md w-full
         fixed top-0 left-0 right 0 z-10 sm:flex flex-wrap">
         
             <div className="flex items-center">
@@ -20,10 +21,10 @@ function Nav(props) {
             </div>
 
             <div className="items-center font-bold text-indigo-900 text-lg hidden space-x-10 lg:flex">
-                    <Link to="/home" className="hover:text-indigo-400">HOME</Link>
-                    <Link to="/allprojects" className="hover:text-indigo-400">CAMPAIGNS</Link>    
-                    <Link to="/postproject" className="hover:text-indigo-400">CREATE CAMPAIGN</Link>
-                    <Link to="/contact" className="hover:text-indigo-400">CONTACT US</Link>
+                    <Link to="/home" className="hover:text-indigo-400">Home</Link>
+                    <Link to="/allprojects" className="hover:text-indigo-400">Campaigns</Link>    
+                    <Link to="/postproject" className="hover:text-indigo-400">Create campaigns</Link>
+                    <Link to="/contact" className="hover:text-indigo-400">Contact us</Link>
             </div>
 
             <div className="mr-10 items-center hidden space-x-6 lg:flex">
@@ -35,7 +36,9 @@ function Nav(props) {
                 {!loggedIn && <Link to="/login">Login</Link>}
                 {loggedIn && <button onClick={handleClick}>Sign Out</button>}
                 </button>
-            </div>                          
+            </div> 
+
+
         </nav>
     );
 }
