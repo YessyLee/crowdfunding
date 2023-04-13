@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 //Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-import PledgeForm from "../components/PledgeForm/PledgeForm";
+
 // import { ArrowSmRightIcon } from '@heroicons/react/24/outline';
 
 function HomePage() {
@@ -35,7 +35,7 @@ function HomePage() {
   const latestProject = projectList.sort(compare).slice(0, 3);
   const latestPledges = projectList.sort(compare).slice(0, 4);
   return (
-    <div className='w-full mt-24'>
+    <div className='w-full mt-32'>
       <div className='w-full h-[700px] bg-gray-900/80 absolute'>
         <img className='w-full h-full object-cover mix-blend-overlay' src="/images/hero-image.jpg" alt="/" />
      </div>
@@ -65,14 +65,29 @@ function HomePage() {
         </div>
       </div>
 
-    <div className="mt-10 shadow-2xl">
-      <h1 className="text-center text-2xl font-bold pt-6 pb-20 text-indigo-500">Thank you for your donations!</h1>
- 
+      <div className="bg-gradient-to-r from-slate-900 from-10% via-sky-600 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-10">
+      <div className="flex justify-between">
+      <h1 className="text-left text-xl font-bold text-slate-100 p-6">Register today & start your very own futureproofME campaign.</h1>
+      <p className='ml-10 mr-10 text-white-100 text-left'><button type="button" 
+      className=" py-2 text-sm font-bold p-4 m-4 rounded-full text-slate-100 text-center bg-pink-500 hover:bg-indigo-400 sm:text-lg "><Link to="/registration">
+      Get Started!</Link></button></p>
+      </div>
       </div>
 
+      <div>
+          
+      </div>
+  
+  
 
-    </div>
-    </div>
+ </div>
+ 
+      </div>
+      
+
+
+  
+
     
   
     

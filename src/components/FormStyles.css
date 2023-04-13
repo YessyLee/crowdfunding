@@ -32,6 +32,7 @@
   .form-item textarea {
     width: 95%;
     padding: 20px;
+    /* margin-left: 5px; */
     border: 1px solid rgb(126, 119, 223);
     background-color: white;
     border-radius: 5px;

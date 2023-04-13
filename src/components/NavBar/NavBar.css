@@ -1,0 +1,124 @@
+:root {
+    --heading-font: "Roboto", sans-serif;
+    --body-font: "Roboto", sans-serif;
+    --accent-colour-light: rgb(133, 116, 226);
+  }
+  
+  .nav-bar-wrapper {
+    font-family: var(--body-font);
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 150px;
+    padding: 1.5rem;
+    color: rgb(54, 13, 150);
+    background-color: rgb(206, 222, 253);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .nav-bar-wrapper.active {
+    margin-right: 20px;
+    /* transition: 0.3s ease-in-out; */
+  }
+  
+  .nav-bar-wrapper .nav-logo {
+    width: 150px;
+  }
+  
+  nav a {
+    margin: 0 2rem;
+    color: var(--text-colour);
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: rgb(133, 116, 226);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .nav-bar-wrapper .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: rgb(133, 116, 226);
+    border: none;
+    outline: none;
+    color: white;
+    display: none;
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-bar-wrapper .nav-btn {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .nav-bar-wrapper .nav-btn:hover {
+      color: var(--accent-colour-light);
+      transition: 0.2s ease-in-out;
+    }
+  
+    .nav-bar-wrapper nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      background-color: var(--accent-colour-light);
+      transition: 1s;
+      transform: translateY(-100vh);
+      z-index: 1;
+    }
+  
+    .nav-bar-wrapper nav a {
+      background-color: transparent;
+      color: white;
+    }
+  
+    .nav-bar-wrapper nav a:hover {
+      color: var(--text-colour);
+      transition: 0.2s ease-in-out;
+    }
+  
+    .nav-bar-wrapper .responsive_nav {
+      transform: none;
+    }
+  
+    nav .nav-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+  
+    .fa-x {
+      background-color: transparent;
+      height: 25px;
+      color: white;
+    }
+  
+    .fa-x:hover {
+      color: var(--text-colour);
+      transition: 0.2s ease-in-out;
+    }
+  
+    nav a {
+      font-size: 1.5rem;
+    }
+  }
