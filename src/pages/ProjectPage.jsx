@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 // import { oneProject } from "../data";
 
 // Components
@@ -38,7 +38,7 @@ function ProjectPage() {
   return (
 
     <body className="flex min-h-screen justify-center items-center">
-      <div className="pt-24 pl-20 pr-20 mt-24">
+      <div className="pt-24 pl-36 pr-36 mt-24">
         <div className="grid grid-cols-2 gap-10">
           
           <div>
@@ -59,17 +59,17 @@ function ProjectPage() {
           </div>
 
 
-          <div className="border-dotted border-2 border-indigo-100 p-5 mb-5">
-            <p className="font-bold text-indigo-500 text-2xl mb-3">{project.is_open ? <p>Status: Accepting Donations</p> : <p>Status: Goal Achieved</p>}</p>
+          <div className="shadow-lg pt-10 mb-5 rounded-lg">
+            <p className="font-bold text-indigo-500 text-center text-2xl mb-3">{project.is_open ? <p>Status: Accepting Donations</p> : <p>Status: Goal Achieved</p>}</p>
             <PledgeForm project={project} /> 
           </div>
 
-          <div className="mb-10 mt-3">
-            <h3 className="font-bold text-indigo-500 text-2xl mb-3">Thank you for your donations!</h3>
+          <div className="mb-10 mt-10">
+            <h3 className="font-bold text-indigo-500 text-center text-2xl mb-3">Thank you for your donations!</h3>
             <ul>
              {project.pledges.map((pledgeData, key) => {
               return (
-              <span className= "block h-15 bg-indigo-50 rounded-xl p-3 mb-3 text-slate-500 text-lg" key={key}>
+              <span className= "block h-15 bg-indigo-50 rounded-xl p-5 mb-3 text-slate-500 text-lg" key={key}>
               ${pledgeData.amount} donated by {" "}
               {pledgeData.supporter ? pledgeData.supporter : "Anonymous"}
               <p className="font-bold ">"{pledgeData.comment}"</p>
@@ -79,7 +79,21 @@ function ProjectPage() {
             </ul>
           </div>
         </div>
-      </div>
+
+          <div className="bg-gradient-to-r from-slate-900 from-10% via-sky-600 
+via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-10">
+<div className="flex justify-between">
+<h1 className="text-left text-xl font-bold text-slate-100 p-6">Register 
+today & start your very own futureproofME campaign.</h1>
+<p className='ml-10 mr-10 text-white-100 text-left'><button type="button" 
+className=" py-2 text-sm font-bold p-4 m-4 rounded-full text-slate-100 
+text-center bg-pink-500 hover:bg-indigo-400 sm:text-lg "><Link to="/
+registration">
+Get Started!</Link></button></p>
+</div>
+</div>
+
+        </div>
     </body>
   );
   }

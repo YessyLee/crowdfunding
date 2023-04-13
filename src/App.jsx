@@ -12,9 +12,11 @@ import ContactPage from "./pages/ContactPage";
 import AllProjectsPage from "./pages/AllProjectsPage";
 
 
+
 // Components
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
+
 
 //CSS
 import "./App.css"
