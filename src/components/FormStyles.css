@@ -5,6 +5,7 @@
     /* -ms-transform: translate(-50%, -50%); */
     /* transform: translate(-50%, -50%); */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
   }
   
   form {
@@ -35,7 +36,7 @@
     /* margin-left: 5px; */
     border: 1px solid rgb(126, 119, 223);
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
     color: rgb(126, 119, 223);
     font-size: 15px;

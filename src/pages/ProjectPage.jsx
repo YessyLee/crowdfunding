@@ -39,13 +39,13 @@ function ProjectPage() {
 
     <body className="flex min-h-screen justify-center items-center">
       <div className="pt-24 pl-36 pr-36 mt-24">
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-2 gap-16">
           
           <div>
-            <img className="rounded-md shadow-md w-full h-96 object-cover" src={project.image} />
+            <img className="rounded-lg shadow-md w-full h-96 object-cover" src={project.image} />
           </div>
           
-          <div className="bg-indigo-50 p-4 rounded-md shadow-md">
+          <div className="bg-indigo-50 p-5 rounded-lg shadow-md">
             <h2 className="font-bold text-indigo-800 text-3xl mb-5">{project.title}</h2>
             
             <p className="text-slate-500 text-lg">
@@ -65,7 +65,7 @@ function ProjectPage() {
           </div>
 
           <div className="mb-10 mt-10">
-            <h3 className="font-bold text-indigo-500 text-center text-2xl mb-3">Thank you for your donations!</h3>
+            <h3 className="font-bold text-indigo-500 text-center text-2xl mb-5">Thank you for your donations!</h3>
             <ul>
              {project.pledges.map((pledgeData, key) => {
               return (
