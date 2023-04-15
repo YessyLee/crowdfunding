@@ -21,9 +21,9 @@ Username | Password:
 
 ## Work in Progress
 
-There are a few things that I still need to fix as follow - here as a reminder to myself as well:
+There are a few things that I still need to add as follow - here as a reminder to myself as well:
 - Create user profile page & edit project functionality
-- Create search bar and function on title
+- Create search functionality based on title, search bar in all project page or on nav
 
 Any questions in regard to this repo, please contact me on:
 - Email: yessy.rayner@gmail.com
