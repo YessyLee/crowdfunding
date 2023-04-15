@@ -1,10 +1,12 @@
 import { useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
-
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
+// import { responsive } from "../data.js";
+// 
 //Components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-
-// import { ArrowSmRightIcon } from '@heroicons/react/24/outline';
+import Slider from "../components/Slider/Slider";
 
 function HomePage() {
   //State
@@ -35,7 +37,7 @@ function HomePage() {
   const latestProject = projectList.sort(compare).slice(0, 3);
   const latestPledges = projectList.sort(compare).slice(0, 4);
   return (
-    <div className='w-full mt-32'>
+    <div className='w-full mt-24'>
       <div className='w-full h-[700px] bg-gray-900/80 absolute'>
         <img className='w-full h-full object-cover mix-blend-overlay' src="/images/hero-image.jpg" alt="/" />
      </div>
@@ -59,13 +61,21 @@ function HomePage() {
         {latestProject.map((project, key) => {
           return <ProjectCard key={key} projectData={project} />;
         })}
+     
+        
         <div></div>
         <div></div>
         <div><p className= 'py-2 text-md font-bold text-indigo-900 text-right sm:text-xl'>See more campaigns <Link to="/allprojects"> ➔</Link></p></div>
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-slate-900 from-10% via-sky-600 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-10">
+      <div>
+      <h1 className="text-center text-3xl 
+font-bold pt-10 text-indigo-900">Thousand of users share the love!</h1>
+        <Slider />
+      </div>
+
+      <div className="bg-gradient-to-r from-slate-900 from-10% via-sky-600 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-12">
       <div className="flex justify-between">
       <h1 className="text-left text-xl font-bold text-slate-100 p-6">Register today & start your very own futureproofME campaign.</h1>
       <p className='ml-10 mr-10 text-white-100 text-left'><button type="button" 
@@ -74,10 +84,18 @@ function HomePage() {
       </div>
       </div>
 
+      
+      
+      
+
       <div>
-          
       </div>
   
+  
+  
+  
+  
+
   
 
  </div>
