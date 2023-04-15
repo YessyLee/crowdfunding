@@ -10,7 +10,7 @@ function Nav(props) {
     navigate("/home");
   };
 
-  
+
     return (
         <nav className="flex justify-between bg-blue-100 p-2 backdrop-blur-md w-full
         fixed top-0 left-0 right 0 z-10 sm:flex flex-wrap">
