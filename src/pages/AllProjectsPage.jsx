@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import Slider from "../components/Slider/Slider";
@@ -8,6 +12,7 @@ import Slider from "../components/Slider/Slider";
 function AllProjectsPage() {
   // State
   const [projectList, setProjectList] = useState([]);
+  const [shuffledSortedProjectList, setShuffledSortedProjectList] = useState([]);
 
 
   useEffect(() => {
@@ -21,17 +26,52 @@ function AllProjectsPage() {
   }, []);
 
   //Sort by date created
-  function compare(a, b) {
-    if (a.date_created < b.date_created) {
-      return 1;
-    }
-    if (a.date_created > b.date_created) {
-      return -1;
-    }
-    return 0;
+  // function compare(a, b) {
+    // if (a.date_created < b.date_created) {
+      // return 1;
+    // }
+    // if (a.date_created > b.date_created) {
+      // return -1;
+    // }
+    // return 0;
+  // }
+  // So projects will appear in date order
+  // const latestProject = projectList.sort(compare);
+
+  // new - old
+  const orderProjectList = () => {
+    const orderedList = [...projectList].sort((a, b) => new Date(b.date_created) - new Date(a.date_created));
+    setShuffledSortedProjectList(orderedList);
+  };
+
+  // old - new
+  const reorderProjectList = () => {
+    const orderedList = [...projectList].sort((a, b) => new Date(a.date_created) - new Date(b.date_created));
+    setShuffledSortedProjectList(orderedList);
+  };
+
+  // a - z
+  const sortProjectList = () => {
+    const sortedList = [...projectList].sort((a, b) => a.title.localeCompare(b.title));
+    setShuffledSortedProjectList(sortedList);
+  };
+
+  // z - a
+  const resortProjectList = () => {
+    const sortedList = [...projectList].sort((a, b) => b.title.localeCompare(a.title));
+    setShuffledSortedProjectList(sortedList);
+  };
+
+  //rendering alphabets first
+  useEffect(() => {
+    resortProjectList();
+  }, [projectList]);
+
+  //sort button function
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
   }
-  //So projects will appear in date order
-  const latestProject = projectList.sort(compare);
+
 
   return (
     <div className='w-full mt-24'>
@@ -69,34 +109,105 @@ function AllProjectsPage() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-indigo-900 from-10% via-sky-400 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mb-10">
-          <h1 className="pt-5 pb-5 text-3xl font-bold text-center text-slate-100 tracking-widest">Current Campaigns</h1>
-        </div>
+        <div className="bg-gradient-to-r from-indigo-900 from-10% via-sky-400 via-30% to-slate-900 to-90% rounded-lg shadow-2xl mb-10">
+          <h1 className="pt-5 pb-5 text-3xl font-bold text-center text-slate-100 tracking-widest">Current Campaigns</h1></div>
+
+        <Menu as="div" className="relative inline-block pb-10 pl-10">
+          <div>
+          <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-3 text-md font-semibold text-gray-900 
+          shadow-sm ring-2 ring-inset ring-indigo-400 hover:bg-indigo-200">
+          Sort options
+          <ChevronDownIcon className="-mr-1 h-5 w-5 text-indigo-800" aria-hidden="true" />
+          </Menu.Button>
+         </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+            <Menu.Item>
+              {({ active }) => (
+              <button onClick={sortProjectList} className={classNames(
+                active ? 'bg-gray-100 text-indigo-700' : 'text-indigo-500',
+                'block px-4 py-2 text-sm font-bold'
+              )}
+              >
+              a ➔ z
+              </button>
+              )}
+              </Menu.Item>
+
+              <Menu.Item>
+              {({ active }) => (
+              <button onClick={resortProjectList} className={classNames(
+                active ? 'bg-gray-100 text-indigo-700' : 'text-indigo-500',
+                'block px-4 py-2 text-sm font-bold'
+              )}
+              >
+              z ➔ a
+              </button>
+              )}
+              </Menu.Item>
+
+              <Menu.Item>
+              {({ active }) => (
+              <button onClick={orderProjectList} className={classNames(
+                active ? 'bg-gray-100 text-indigo-700' : 'text-indigo-500',
+                'block px-4 py-2 text-sm font-bold'
+              )}
+              >
+              new ➔ old
+              </button>
+              )}
+              </Menu.Item>
+             
+              <Menu.Item>
+              {({ active }) => (
+              <button onClick={reorderProjectList} className={classNames(
+                active ? 'bg-gray-100 text-indigo-700' : 'text-indigo-500',
+                'block px-4 py-2 text-sm font-bold'
+              )}
+              >
+              old ➔ new
+              </button>
+              )}
+              </Menu.Item>
+
+              </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  
 
         <div className="">
           <div className="grid grid-cols-3 pl-10 pr-10 gap-8">
-            {latestProject.map((project, key) => {
+            {shuffledSortedProjectList.map((project, key) => {
               return <ProjectCard key={key} projectData={project} />;
             })}
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-slate-900 from-10% via-sky-600 
-via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-10">
+        <div className="bg-gradient-to-r from-indigo-900 from-10% via-sky-600 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-12 h-[120px] -m-16">
 <div className="flex justify-between">
-<h1 className="text-left text-xl font-bold text-slate-100 p-6">Register 
-today & start your very own futureproofME campaign.</h1>
-<p className='ml-10 mr-10 text-white-100 text-left'><button type="button" 
-className=" py-2 text-sm font-bold p-4 m-4 rounded-full text-slate-100 
-text-center bg-pink-500 hover:bg-indigo-400 sm:text-lg "><Link to="/
-registration">
+<h1 className="text-left text-xl font-bold text-slate-100 pt-12 p-8">Register today & start your very own futureproofME campaign.</h1>
+<p className='ml-10 mr-10 pt-6 text-white-100 text-left'><button type="button" 
+className=" py-2 text-sm font-bold p-8 m-4 rounded-full text-slate-100 text-center bg-pink-500 hover:bg-indigo-400 sm:text-lg "><Link to="/registration">
 Get Started!</Link></button></p>
 </div>
+</div>
 
 </div>
-      </div>
+</div>
 
-    </div>
+
+   
   );
 }
 

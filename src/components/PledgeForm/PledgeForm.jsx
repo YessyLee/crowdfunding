@@ -97,7 +97,7 @@ function PledgeForm(props) {
              id="anonymous"
              name="anonymous"
              onChange={handleChange}
-             required="required"
+             
            />
          <label htmlFor="description">
              <span>anonymous</span>
