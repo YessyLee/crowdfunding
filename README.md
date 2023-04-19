@@ -4,8 +4,9 @@
 FutureProofME is a crowdfunding platform to help users raise funds for education. FutureProofME can help users overcome financial barriers that may otherwise prevent them from pursuing their desired career. By using FutureProofME, users can create campaigns to raise funds for their educational expenses, including tuition fees, exam certification, textbooks, and other course materials.
 
 ## Links
+- Live site: https://fututeproofme.netlify.app/home
 - Github repo: https://github.com/YessyLee/crowdfunding
-- My deployed site: https://fututeproofme.netlify.app/home
+
 
 My backend DRF sites:
 - https://purple-lake-2509.fly.dev/projects/
