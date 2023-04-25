@@ -33,6 +33,7 @@
   height: 60px;
   border-radius: 50%;
   background: #bacdf9;
+  opacity: 0.7;
   border: 1px solid rgba(34, 34, 34, 0.287);
   position: absolute;
   display: flex;
@@ -42,8 +43,8 @@
 }
 
 .btn-slide img {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
 }
 .prev {

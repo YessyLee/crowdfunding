@@ -70,14 +70,14 @@ function HomePage() {
       </div>
 
       <div>
-      <h1 className="text-center text-3xl 
+      <h1 className="text-center lg:text-3xl text-2xl
 font-bold pt-10 text-indigo-900">Thousand of users share the love!</h1>
         <Slider />
       </div>
 
       <div className="bg-gradient-to-r from-indigo-900 from-10% via-sky-600 via-30% to-indigo-900 to-90% rounded-lg shadow-2xl mt-12 h-[120px] -m-16">
-      <div className="flex justify-between">
-      <h1 className="text-left text-xl font-bold text-slate-100 pt-12 p-8">Register today & start your very own futureproofME campaign.</h1>
+      <div className="flex lg:justify-between ml-10 mr-5">
+      <h1 className="text-left lg:text-xl text-sm lg:font-bold font-semibold text-slate-100 lg:pt-12 p-8">Register today & start your very own futureproofME campaign.</h1>
       <p className='ml-10 mr-10 pt-6 text-white-100 text-left'><button type="button" 
       className=" py-2 text-sm font-bold p-8 m-4 rounded-full text-slate-100 text-center bg-pink-500 hover:bg-indigo-400 sm:text-lg "><Link to="/registration">
       Get Started!</Link></button></p>
